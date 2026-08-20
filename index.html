@@ -328,6 +328,53 @@ main{flex:1;min-height:0;position:relative;}
 }
 .empty-board{text-align:center;color:var(--text-sub);padding:60px 0;font-size:14px;}
 
+/* ---------- RESPONSIVE (좁은 태블릿 / 폰 화면 대응) ---------- */
+@media (max-width: 900px){
+  header{padding:8px 12px;gap:8px;flex-wrap:wrap;row-gap:8px;}
+  .brand img{height:34px;}
+  .brand .wordmark b{font-size:14px;}
+  .brand .wordmark span{font-size:9px;letter-spacing:1px;}
+  .tabs{order:3;width:100%;overflow-x:auto;padding:4px;gap:4px;-webkit-overflow-scrolling:touch;}
+  .tab-btn{padding:8px 14px;font-size:12.5px;white-space:nowrap;}
+  .conn{font-size:10.5px;}
+  .mode-title{font-size:12.5px !important;}
+
+  .order-wrap{flex-direction:column;height:auto;min-height:100%;}
+  .order-main{padding:14px;}
+  .cart-panel{width:100%;border-left:none;border-top:1px solid var(--card-border);padding:14px;}
+  .menu-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;}
+  .menu-card{padding:11px;}
+  .menu-card .name{font-size:13.5px;}
+
+  .diag-wrap{padding:16px 12px;}
+  .diag-intro h1{font-size:22px;}
+  .diag-intro p{font-size:13px;}
+  .q-text{font-size:16px;}
+  .opt-btn{padding:12px 14px;font-size:13.5px;}
+  .card-news{border-radius:16px;}
+  .slide-title{font-size:19px;}
+  .pairing-row{flex-direction:column;}
+
+  .idle-scroll{padding:16px 18px 0;}
+  .idle-headline{font-size:22px;}
+  .idle-photo{width:180px;height:180px;}
+  .idle-flow{min-width:0;}
+  .idle-cta{font-size:12.5px;padding:12px;}
+
+  .kitchen-wrap{padding:14px;}
+  .board{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));}
+}
+
+@media (max-width: 480px){
+  .brand .wordmark span{display:none;}
+  .tab-btn{padding:7px 10px;font-size:11.5px;}
+  .menu-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
+  .idle-headline{font-size:19px;}
+  .idle-photo{width:140px;height:140px;}
+  .idle-flow-text p{font-size:11px;}
+  .receipt{width:88vw;}
+}
+
 </style>
 </head>
 <body>
