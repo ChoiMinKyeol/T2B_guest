@@ -507,6 +507,7 @@ main{flex:1;min-height:0;position:relative;}
           <div class="cat-toggle">
             <button class="cat-btn active" data-cat="coffee">☕ 음료</button>
             <button class="cat-btn" data-cat="dessert">🍰 디저트</button>
+            <button class="cat-btn" data-cat="goods">🎁 상품</button>
           </div>
           <div class="menu-grid" id="menuGrid"></div>
         </div>
@@ -1051,24 +1052,29 @@ resetDiag();
    ========================================================= */
 const MENU = {
   coffee: [
-    { name: "콜롬비아 우일라", note: "시트러스 · 코코아 베이스", price: 4800, mindset: "passion" },
-    { name: "에티오피아 예가체프", note: "자스민 · 홍차 향", price: 5200, mindset: "stable" },
-    { name: "케냐 AA", note: "자몽 · 흑설탕의 조화", price: 5200, mindset: "positive" },
-    { name: "브라질 미나스제라이스", note: "견과류 · 묵직한 바디감", price: 4800, mindset: "growth" },
-    { name: "에티오피아 구지", note: "베르가못 · 복숭아 향", price: 5200, mindset: "calm" },
-    { name: "복숭아 아이스티", note: "상큼한 복숭아 향", price: 5000, tag: "아이스티" },
+    { name: "콜롬비아 우일라", note: "시트러스 · 코코아 베이스", price: 2900, mindset: "passion" },
+    { name: "에티오피아 예가체프", note: "자스민 · 홍차 향", price: 2900, mindset: "stable" },
+    { name: "케냐 AA", note: "자몽 · 흑설탕의 조화", price: 2900, mindset: "positive" },
+    { name: "브라질 미나스제라이스", note: "견과류 · 묵직한 바디감", price: 2900, mindset: "growth" },
+    { name: "에티오피아 구지", note: "베르가못 · 복숭아 향", price: 2900, mindset: "calm" },
+    { name: "복숭아 아이스티", note: "상큼한 복숭아 향", price: 2900, tag: "아이스티" },
   ],
   dessert: [
-    { name: "오렌지 파운드 케이크", note: "상큼한 오렌지 글레이즈", price: 5500, mindset: "passion" },
-    { name: "말차 파운드 케이크", note: "쌉쌀한 말차 글레이즈", price: 5500, mindset: "stable" },
-    { name: "레몬 파운드 케이크", note: "새콤달콤 레몬 글레이즈", price: 5500, mindset: "positive" },
-    { name: "헤이즐넛 파운드 케이크", note: "진한 부드러운 헤이즐넛", price: 5800, mindset: "growth" },
-    { name: "얼그레이 파운드 케이크", note: "은은한 얼그레이 글레이즈", price: 5500, mindset: "calm" },
+    { name: "오렌지 파운드 케이크", note: "상큼한 오렌지 글레이즈", price: 3900, mindset: "passion" },
+    { name: "말차 파운드 케이크", note: "쌉쌀한 말차 글레이즈", price: 3900, mindset: "stable" },
+    { name: "레몬 파운드 케이크", note: "새콤달콤 레몬 글레이즈", price: 3900, mindset: "positive" },
+    { name: "헤이즐넛 파운드 케이크", note: "진한 부드러운 헤이즐넛", price: 3900, mindset: "growth" },
+    { name: "얼그레이 파운드 케이크", note: "은은한 얼그레이 글레이즈", price: 3900, mindset: "calm" },
+  ],
+  goods: [
+    { name: "파운드케이크 5종 세트", note: "5가지 맛 모두 담은 세트", price: 19500, tag: "세트" },
+    { name: "드립백 1종", note: "원하는 원두 1종 선택", price: 2200, tag: "드립백" },
+    { name: "드립백 5종 세트", note: "5가지 원두를 한 번에", price: 10000, tag: "세트" },
   ],
 };
 
 const MENU_PRICE_MAP = {};
-[...MENU.coffee, ...MENU.dessert].forEach((item) => (MENU_PRICE_MAP[item.name] = item.price));
+[...MENU.coffee, ...MENU.dessert, ...MENU.goods].forEach((item) => (MENU_PRICE_MAP[item.name] = item.price));
 
 let currentCat = "coffee";
 let cart = {}; // name -> {qty, price}
